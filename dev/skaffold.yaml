@@ -1,0 +1,15 @@
+apiVersion: skaffold/v1alpha3
+kind: Config
+build:
+  artifacts:
+    - imageName: api
+      workspace: ../api
+deploy:
+  helm:
+    releases:
+      - name: bug-demo
+        chartPath: ../chart
+        valuesFiles:
+          - skaffold-values.yaml
+        values:
+          api.image: api

@@ -1,0 +1,5 @@
+api:
+  ingress:
+    enabled: true
+    hosts:
+      - api.bug-demo.k8s.test
